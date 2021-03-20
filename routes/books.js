@@ -63,6 +63,7 @@ router.put('/:isbn', async function (req, res, next) {
       return next(error);
     }
     const book = await Book.update(req.params.isbn, req.body);
+
     return res.status(200).json({ book });
   } catch (err) {
     return next(err);
